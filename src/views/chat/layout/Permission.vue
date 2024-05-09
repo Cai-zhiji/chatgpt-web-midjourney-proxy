@@ -1,7 +1,7 @@
 <script setup lang='ts'>
 import { onMounted } from 'vue'
 import { useRouter } from 'vue-router'
-import { useLoginModal } from '@/utils/functions/useLoginModal'
+// import { useLoginModal } from '@/utils/functions/useLoginModal'
 
 // 使用 defineProps 来声明 Props
 const props = defineProps<Props>()
@@ -13,10 +13,13 @@ interface Props {
 }
 
 onMounted(() => {
-  const { showLoginModal } = useLoginModal(props.visible.value, router)
-  showLoginModal()
+  // const { showLoginModal } = useLoginModal(props.visible.value, router)
+  // showLoginModal()
+  console.log("")
 })
 </script>
 
 <template>
+  
 </template>
+

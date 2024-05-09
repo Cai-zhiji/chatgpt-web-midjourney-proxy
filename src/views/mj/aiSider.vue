@@ -122,6 +122,7 @@ function handleclick(){
                 <span class="text-[10px]">{{ $t('mjtab.announcement') }}</span>
               </div>
             </template>
+            公告
           </NTooltip>
         </a>
 
