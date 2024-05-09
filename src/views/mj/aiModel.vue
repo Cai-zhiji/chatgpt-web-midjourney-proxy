@@ -13,20 +13,8 @@ const chatSet = new chatSetting(uuid == null ? 1002 : uuid)
 
 const nGptStore = ref(chatSet.getGptConfig())
 
-// gpt3.5 modal
-// const config = ref({
-//   model: ['gpt-3.5-turbo', 'gpt-3.5-turbo-instruct', 'gpt-3.5-turbo-0301', 'gpt-3.5-turbo-0613', 'gpt-3.5-turbo-1106', 'gpt-3.5-turbo-0125', 'gpt-3.5-turbo-16k', 'gpt-3.5-turbo-16k-0613'],
-//   maxToken: 2048,
-// })
-
-// gpt4.0 modal
-// const config = ref({
-//   model: ['gpt-4', 'gpt-4-0314', 'gpt-4-0613', 'gpt-4-1106-preview', 'gpt-4-0125-preview', 'gpt-4-vision-preview', 'gpt-4-1106-vision-preview', 'gpt-4-turbo', 'gpt-4-turbo-preview', 'gpt-4-turbo-2024-04-09', 'gpt-4-32k'],
-//   maxToken: 2048,
-// })
-
 const config = ref({
-  model: ['gpt-3.5-turbo'],
+  model: [],
   maxToken: 2048,
 })
 
