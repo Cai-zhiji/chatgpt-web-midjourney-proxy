@@ -1,6 +1,6 @@
 module.exports = {
   apps: [{
-    name: 'wenwuai',
+    name: 'ruisenai',
     script: './build/index.mjs',
     instances: 1,
     autorestart: true,

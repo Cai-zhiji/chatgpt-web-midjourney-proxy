@@ -30,9 +30,9 @@ export interface UserState {
 export function defaultSetting(): UserState {
   return {
     userInfo: {
-      avatar: 'https://kanekikeh.online/calvin/%E5%A4%B4%E5%83%8F.jpg',
+      avatar: 'https://kanekikeh.online/calvin/ruisen.png',
       name: t('mjset.sysname'), // 'AI绘图',
-      description: '文无AI©2024.',
+      description: '瑞森Ai©2024.',
       points: 0,
       token: '',
       packages: [], // 初始化套餐数组

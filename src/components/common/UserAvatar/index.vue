@@ -17,16 +17,16 @@ const userInfo = computed(() => userStore.userInfo)
           size="large"
           round
           :src="userInfo.avatar"
-          fallback-src="https://kanekikeh.online/calvin/%E5%A4%B4%E5%83%8F.jpg"
+          fallback-src="https://kanekikeh.online/calvin/ruisen.png"
         />
       </template>
       <template v-else>
-        <NAvatar size="large" round src="https://kanekikeh.online/calvin/%E5%A4%B4%E5%83%8F.jpg" />
+        <NAvatar size="large" round src="https://kanekikeh.online/calvin/ruisen.png" />
       </template>
     </div>
     <div class="flex-1 min-w-0 ml-2">
       <h2 class="overflow-hidden font-bold text-md text-ellipsis whitespace-nowrap">
-        {{ userInfo.name ?? 'AI绘图' }}
+        {{ userInfo.name }}
       </h2>
       <p class="overflow-hidden text-xs text-gray-500 text-ellipsis whitespace-nowrap">
         <span

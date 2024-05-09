@@ -100,7 +100,7 @@ export default {
     server: '服务端',
     about: '关于',
     model: '模型',
-    sysname: '请登陆',
+    sysname: '瑞森Ai',
   },
 
   mjtab: {

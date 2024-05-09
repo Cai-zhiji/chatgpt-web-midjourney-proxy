@@ -20,10 +20,8 @@ export function useLoginModal(isLoggedIn: boolean, router: Router) {
         onPositiveClick: () => {
           // 这里可以放置登录操作，比如打开一个登录表单的模态框
           router.push({ name: 'login' })
-          message.success('跳转登陆')
         },
         onNegativeClick: () => {
-          message.info('取消登陆')
         },
       })
     }
