@@ -216,7 +216,7 @@ if (isUpload) {
       // res.send('文件上传成功！');
       res.setHeader('Content-type', 'application/json')
       if (req.file) {
-        const baseUrl = process.env.BASE_URL || 'https://express.noword.tech' // 默认值为你的域名
+        const baseUrl = process.env.BASE_URL || 'https://express.ruisenai.cn' // 默认值为你的域名
         const fullPath = `${baseUrl}/uploads/${formattedDate()}/${req.file.filename}`
         res.json({ url: fullPath, created: Date.now() })
       }

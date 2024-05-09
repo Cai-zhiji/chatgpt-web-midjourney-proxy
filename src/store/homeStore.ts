@@ -97,7 +97,7 @@ const getServerDefault = () => {
     OPENAI_API_KEY: '',
     OPENAI_API_BASE_URL: '',
     MJ_SERVER: '',
-    UPLOADER_URL: 'https://express.noword.tech/openapi/v1/upload',
+    UPLOADER_URL: 'https://express.ruisenai.cn/openapi/v1/upload',
     MJ_API_SECRET: '',
     MJ_CDN_WSRV: false,
   }

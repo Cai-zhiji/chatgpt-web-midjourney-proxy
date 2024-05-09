@@ -139,7 +139,7 @@ const getUrl = (url: string) => {
   if (gptServerStore.myData.MJ_SERVER)
     return `${gptServerStore.myData.MJ_SERVER}${url}`
 
-  return `https://express.noword.tech/mjapi${url}`
+  return `https://express.ruisenai.cn/mjapi${url}`
 }
 
 export const mjFetch = (url: string, data?: any): Promise<any> => {

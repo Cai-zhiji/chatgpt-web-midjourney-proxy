@@ -1,6 +1,6 @@
 import axios from 'axios'
 import type { ChatMessage } from 'gpt-tokenizer/esm/GptEncoding'
-import { calculateAndUpdatePoints, checkSufficientPoints } from '../utils/functions/calpoints' // 导入积分计算函数
+// 导入积分计算函数
 import { mlog, myTrim } from './mjapi'
 import { fetchSSE } from './sse/fetchsse'
 import { localGet, localSaveAny } from './mjsave'
@@ -29,7 +29,7 @@ const getUrl = (url: string) => {
   if (gptServerStore.myData.OPENAI_API_BASE_URL)
     return `${gptServerStore.myData.OPENAI_API_BASE_URL}${url}`
 
-  return `https://express.noword.tech/openapi${url}`
+  return `https://express.ruisenai.cn/openapi${url}`
 }
 
 export const gptGetUrl = getUrl
@@ -294,11 +294,11 @@ export async function subModel(opt: subModelType) {
   }
 
   // 先检查积分是否足够
-  const hasEnoughPoints = await checkSufficientPoints(model)
-  if (!hasEnoughPoints) {
-    opt.onError && opt.onError({ message: '积分不足，请购买更多套餐或降低使用量。' })
-    return
-  }
+  // const hasEnoughPoints = await checkSufficientPoints(model)
+  // if (!hasEnoughPoints) {
+  //   opt.onError && opt.onError({ message: '积分不足，请购买更多套餐或降低使用量。' })
+  //   return
+  // }
 
   // 构建请求体
   const body = {
@@ -329,10 +329,10 @@ export async function subModel(opt: subModelType) {
         const obj = JSON.parse(data)
         opt.onMessage({ text: obj.choices[0].delta?.content ?? '', isFinish: obj.choices[0].finish_reason != null })
 
-        if (obj.choices[0].finish_reason != null) {
-          // 只有在请求成功完成后，才更新积分消耗
-          const pointsResult = await calculateAndUpdatePoints(model)
-        }
+        // if (obj.choices[0].finish_reason != null) {
+        //   // 只有在请求成功完成后，才更新积分消耗
+        //   const pointsResult = await calculateAndUpdatePoints(model)
+        // }
       },
       onError: opt.onError,
     })
