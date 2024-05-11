@@ -3,9 +3,11 @@ import { NDataTable } from 'naive-ui'
 
 const modelPricing = [
   { model: 'gpt-3.5-turobo', price: '免费' },
-  { model: 'gpt-3.5-turobo-16k', price: '限时免费' },
-  { model: '示例模型1', price: '$19.99' },
-  { model: '示例模型2', price: '$29.99' },
+  { model: 'gpt-3.5-turobo-16k', price: '0积分/次（限时免费）' },
+  { model: 'gpt-4-0125-preview', price: '10积分/次' },
+  { model: 'gpt-4-turbo-preview', price: '10积分/次' },
+  { model: 'gpt-4-all', price: '50积分/次' },
+  { model: 'midjourney', price: '50积分/次' },
 ]
 
 const columns = [

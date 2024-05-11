@@ -138,7 +138,7 @@ const purchasePackage = async (packageDetail) => {
       </div>
     </template>
   </NModal>
-  <div class="flex items-center gap-8 flex-wrap">
+  <div class="flex justify-center items-center gap-8 flex-wrap">
     <div
       v-for="(pkg, index) in packages"
       :key="index"

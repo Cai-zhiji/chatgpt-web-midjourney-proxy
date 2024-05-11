@@ -1,7 +1,7 @@
 import { useUserStore } from '@/store'
 
 // 定义积分消耗
-const FIXED_DEDUCTION = 0
+const FIXED_DEDUCTION = 50
 
 /**
  * 每次调用扣除32积分
