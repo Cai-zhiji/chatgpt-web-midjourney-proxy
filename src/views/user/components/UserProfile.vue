@@ -45,10 +45,9 @@ function handleLoginClick() {
         {{ userInfo.name }}
       </h2>
     </div>
-
     <!-- 提示 -->
-    <NAlert type="info" closable>
-      本站福利：本网站承诺gpt-3.5-turobo模型永久免费使用，gpt-3.5-turobo-16k模型限时免费
+    <NAlert type="warning" closable>
+      关于本站的更多福利，模型的功能、价格等相关信息，添加客服微信了解更多：ACGWAQT
     </NAlert>
     <!-- 选项卡 -->
     <NTabs

@@ -1,11 +1,12 @@
 <script setup lang="ts">
-import { NDataTable } from 'naive-ui'
+import { NAlert, NDataTable } from 'naive-ui'
 
 const modelPricing = [
   { model: 'gpt-3.5-turobo', price: '免费' },
   { model: 'gpt-3.5-turobo-16k', price: '0积分/次（限时免费）' },
   { model: 'gpt-4-0125-preview', price: '10积分/次' },
   { model: 'gpt-4-turbo-preview', price: '10积分/次' },
+  { model: 'gpt-4-vision-preview', price: '30积分/次' },
   { model: 'gpt-4-all', price: '50积分/次' },
   { model: 'midjourney', price: '50积分/次' },
 ]
@@ -23,6 +24,9 @@ const columns = [
 </script>
 
 <template>
+  <NAlert type="warning" closable>
+    本站提供ChatGPT官网GPT4代充服务，详细信息添加客服微信了解更多：ACGWAQT
+  </NAlert>
   <div class="max-w-4xl mx-auto mt   p-5 bg-white rounded shadow">
     <NDataTable
       :columns="columns"

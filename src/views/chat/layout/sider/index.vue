@@ -6,7 +6,7 @@ import List from './List.vue'
 import Footer from './Footer.vue'
 import { useAppStore, useChatStore } from '@/store'
 import { useBasicLayout } from '@/hooks/useBasicLayout'
-import { PromptStore, SvgIcon } from '@/components/common'
+import { SvgIcon } from '@/components/common'
 import { t } from '@/locales'
 
 const appStore = useAppStore()
@@ -82,7 +82,7 @@ watch(
     :width="260"
     :show-trigger="isMobile ? false : 'arrow-circle'"
     collapse-mode="transform"
-    
+
     bordered
     :style="getMobileClass"
     @update-collapsed="handleUpdateCollapsed"
@@ -99,9 +99,11 @@ watch(
         </div>
         <div class="flex items-center p-4 space-x-4">
           <div class="flex-1">
-            <NButton block @click="show = true">
-              {{ $t('store.siderButton') }}
-            </NButton>
+            <a href="https://bqv8fkoomc1.feishu.cn/wiki/BfvDw53l2iqvnakx0cdcnnnLnue?from=from_copylink" target="_blank">
+              <NButton block>
+                {{ "文无AI通识库" }}
+              </NButton>
+            </a>
           </div>
           <NButton @click="handleClearAll">
             <SvgIcon icon="ri:close-circle-line" />
@@ -114,5 +116,5 @@ watch(
   <template v-if="isMobile">
     <div v-show="!collapsed" class="fixed inset-0 z-40 w-full h-full bg-black/40" @click="handleUpdateCollapsed" />
   </template>
-  <PromptStore v-model:visible="show" />
+  <!-- <PromptStore v-model:visible="show" /> -->
 </template>

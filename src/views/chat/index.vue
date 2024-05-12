@@ -3,7 +3,7 @@ import type { Ref } from 'vue'
 import { computed, h, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import { NAutoComplete, NAvatar, NButton, NInput, useDialog, useMessage } from 'naive-ui'
+import { NAlert, NAutoComplete, NAvatar, NButton, NInput, useDialog, useMessage } from 'naive-ui'
 import html2canvas from 'html2canvas'
 import drawListVue from '../mj/drawList.vue'
 import aiGPT from '../mj/aiGpt.vue'
@@ -600,7 +600,11 @@ const ychat = computed(() => {
       @export="handleExport"
       @handle-clear="handleClear"
     />
+    <NAlert type="warning" closable>
+      本站福利：gpt-3.5-turobo模型永久免费使用，gpt-3.5-turobo-16k模型正在限时免费，欢迎体验使用！
+    </NAlert>
     <main class="flex-1 overflow-hidden">
+      
       <!-- 提示 -->
       <div id="scrollRef" ref="scrollRef" class="h-full overflow-hidden overflow-y-auto">
         <div
