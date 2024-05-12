@@ -42,28 +42,40 @@ const handleSubmit = () => {
       try {
         // 调用API并等待结果
         const response = await login(formValue.value.phoneNumber, formValue.value.password)
-        await userStore.updateUserInfo({ id: response.data.user.id, token: response.data.jwt, name: response.data.user.username, newuser: response.data.user.newuser })
+        await userStore.updateUserInfo({
+          id: response.data.user.id,
+          token: response.data.jwt,
+          name: response.data.user.username,
+          newuser: response.data.user.newuser,
+        })
         await userStore.setLoggedIn(true)
-        // //('---', userStore.userInfo)
         ms.success('登录成功')
         router.push({ name: 'Chat' })
-        // 根据业务需求处理响应，例如保存jwt或跳转到首页
-        // 示例：假设jwt保存在localStorage，跳转到首页
       }
       catch (error) {
         console.error('登录失败', error)
-        ms.error(`登录失败：${error.message}`)
-        // 这里可以处理错误，例如显示一个错误消息
-        // 例如：this.$message.error('登录失败');
+        if (error.response && error.response.status) {
+          switch (error.response.status) {
+            case 404:
+              ms.error('登录失败：用户不存在。')
+              break
+            case 400:
+              ms.error('登录失败：账号或密码错误。')
+              break
+            default:
+              ms.error(`登录失败：${error.response.data.message}`)
+          }
+        }
+        else {
+          ms.error(`登录失败：${error.message}`)
+        }
       }
     }
     else {
-      // //('验证失败', errors)
-      // 处理表单验证失败的情况
+      ms.error('验证失败')
     }
   })
 }
-
 // computed
 // flex flex-col items-center
 // top-14 left-28

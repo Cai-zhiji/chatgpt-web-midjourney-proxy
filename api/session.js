@@ -1,5 +1,5 @@
 module.exports = (req, res) => {
-  console.log('session.js', req.body);
+  // console.log('session.js', req.body);
   try {
     let data = req.body.data; 
     let obj ={

@@ -26,7 +26,7 @@ const paginatedPackages = computed(() => {
 })
 
 onMounted(() => {
-  userStore.loadPackagePurchases()
+  // userStore.loadPackagePurchases()
 })
 
 const updatePage = (page) => {

@@ -546,6 +546,7 @@ onMounted(() => {
   scrollToBottom()
   if (inputRef.value && !isMobile.value)
     inputRef.value?.focus()
+  userStore.loadPackagePurchases()
 })
 
 onUnmounted(() => {
