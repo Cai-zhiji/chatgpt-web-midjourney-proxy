@@ -65,7 +65,7 @@ onMounted(() => {
       const newUserPackageDetail = {
         name: '新用户福利',
         price: '0', // 价格是50分
-        points: 500, // 赠送1000积分
+        points: 100, // 赠送1000积分
         validity: '30', // 有效期30天
       }
       try {
