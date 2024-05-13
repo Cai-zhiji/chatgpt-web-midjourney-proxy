@@ -77,14 +77,8 @@ watch(
 
 <template>
   <NLayoutSider
-    :collapsed="collapsed"
-    :collapsed-width="0"
-    :width="260"
-    :show-trigger="isMobile ? false : 'arrow-circle'"
-    collapse-mode="transform"
-
-    bordered
-    :style="getMobileClass"
+    :collapsed="collapsed" :collapsed-width="0" :width="260"
+    :show-trigger="isMobile ? false : 'arrow-circle'" collapse-mode="transform" bordered :style="getMobileClass"
     @update-collapsed="handleUpdateCollapsed"
   >
     <div class="flex flex-col h-full" :style="mobileSafeArea">
@@ -99,7 +93,10 @@ watch(
         </div>
         <div class="flex items-center p-4 space-x-4">
           <div class="flex-1">
-            <a href="https://bqv8fkoomc1.feishu.cn/wiki/BfvDw53l2iqvnakx0cdcnnnLnue?from=from_copylink" target="_blank">
+            <a
+              href="https://bqv8fkoomc1.feishu.cn/wiki/GqcTwSgkniwlWXkIVKvcnOVinIh?fromScene=spaceOverview
+" target="_blank"
+            >
               <NButton block>
                 {{ "文无AI通识库" }}
               </NButton>
