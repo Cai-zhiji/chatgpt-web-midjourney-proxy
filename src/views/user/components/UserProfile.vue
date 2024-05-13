@@ -40,25 +40,19 @@ function handleLoginClick() {
   <div class="p-4 md:p-8 bg-white dark:bg-[#1E1E1E] rounded-xl shadow-lg">
     <div class="flex flex-col items-center mb-6">
       <!-- 增加 mb-6 提供视觉分隔 -->
-      <img :src="userInfo.avatar" alt="用户头像" class="w-24 h-24 rounded-full border-2 border-gray-400 dark:border-gray-600">
+      <img :src="userInfo.avatar" alt="用户头像"
+        class="w-24 h-24 rounded-full border-2 border-gray-400 dark:border-gray-600">
       <h2 class="mt-4 text-2xl font-bold text-gray-800 dark:text-gray-200 cursor-pointer" @click="handleLoginClick">
         {{ userInfo.name }}
       </h2>
     </div>
     <!-- 提示 -->
     <NAlert type="warning" closable>
-      关于本站的更多福利，模型的功能、价格等相关信息，添加客服微信了解更多：ACGWAQT
+      本站提供ChatGPT官网GPT4代充服务，详细信息添加客服微信了解更多：ACGWAQT
     </NAlert>
     <!-- 选项卡 -->
-    <NTabs
-      v-if="isLoggedIn"
-      class="mt-4"
-      default-value="我的套餐"
-      size="large"
-      animated
-      pane-wrapper-style="margin: 0 -4px"
-      pane-style="padding-left: 4px; padding-right: 4px; box-sizing: border-box;"
-    >
+    <NTabs v-if="isLoggedIn" class="mt-4" default-value="我的套餐" size="large" animated pane-wrapper-style="margin: 0 -4px"
+      pane-style="padding-left: 4px; padding-right: 4px; box-sizing: border-box;">
       <!-- 购买记录 -->
       <NTabPane name="我的套餐" tab="我的套餐">
         <UserPacakge />

@@ -3,7 +3,7 @@ import type { Ref } from 'vue'
 import { computed, h, onMounted, onUnmounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { storeToRefs } from 'pinia'
-import { NAutoComplete, NAvatar, NButton, NInput, useDialog, useMessage } from 'naive-ui'
+import { NAlert, NAutoComplete, NAvatar, NButton, NInput, useDialog, useMessage } from 'naive-ui'
 import html2canvas from 'html2canvas'
 import drawListVue from '../mj/drawList.vue'
 import aiGPT from '../mj/aiGpt.vue'
@@ -594,46 +594,34 @@ const ychat = computed(() => {
 <template>
   <div class="flex flex-col w-full h-full">
     <!-- v-if="isMobile" -->
-    <HeaderComponent
-
-      :using-context="usingContext"
-      @export="handleExport"
-      @handle-clear="handleClear"
-    />
+    <HeaderComponent :using-context="usingContext" @export="handleExport" @handle-clear="handleClear" />
+    <NAlert type="warning" closable>
+      本站提供免费ChatGPT,但请合理使用,不要滥用。
+    </NAlert>
     <main class="flex-1 overflow-hidden">
       <!-- 提示 -->
       <div id="scrollRef" ref="scrollRef" class="h-full overflow-hidden overflow-y-auto">
         <div
-          id="image-wrapper"
-          class="w-full max-w-screen-xl m-auto dark:bg-[#101014]"
+          id="image-wrapper" class="w-full max-w-screen-xl m-auto dark:bg-[#101014]"
           :class="[isMobile ? 'p-2' : 'p-4']"
         >
           <template v-if="!dataSources.length">
-            <div v-if="homeStore.myData.session.notify" class="text-neutral-300 mt-4" v-html="homeStore.myData.session.notify" />
+            <div
+              v-if="homeStore.myData.session.notify" class="text-neutral-300 mt-4"
+              v-html="homeStore.myData.session.notify"
+            />
             <div v-else class="flex items-center justify-center mt-4 text-center text-neutral-300" />
           </template>
           <template v-else>
             <div>
               <Message
-                v-for="(item, index) of dataSources"
-                :key="index"
-                :date-time="item.dateTime"
-                :text="item.text"
-                :inversion="item.inversion"
-                :error="item.error"
-                :loading="item.loading"
-                :chat="item"
-                :index="index"
-                @regenerate="onRegenerate(index)"
-                @delete="handleDelete(index)"
-                @edit="handleEdit(index)"
+                v-for="(item, index) of dataSources" :key="index" :date-time="item.dateTime" :text="item.text"
+                :inversion="item.inversion" :error="item.error" :loading="item.loading" :chat="item" :index="index"
+                @regenerate="onRegenerate(index)" @delete="handleDelete(index)" @edit="handleEdit(index)"
               />
               <Message
-                v-if="ychat.text && !homeStore.myData.session.isCloseMdPreview"
-                :key="dataSources.length" :inversion="true"
-                :date-time="$t('mj.typing')"
-                :chat="ychat"
-                :text="ychat.text"
+                v-if="ychat.text && !homeStore.myData.session.isCloseMdPreview" :key="dataSources.length"
+                :inversion="true" :date-time="$t('mj.typing')" :chat="ychat" :text="ychat.text"
                 :index="dataSources.length"
               />
               <div class="sticky bottom-0 left-0 flex justify-center">
@@ -653,8 +641,8 @@ const ychat = computed(() => {
       <div class="w-full max-w-screen-xl m-auto">
         <aiGptInput
           v-if="['gpt-4-vision-preview', 'gpt-3.5-turbo-16k'].indexOf(gptConfigStore.myData.model) > -1 || st.inputme "
-          v-model:modelValue="prompt" :disabled="buttonDisabled"
-          :search-options="searchOptions" :render-option="renderOption"
+          v-model:modelValue="prompt" :disabled="buttonDisabled" :search-options="searchOptions"
+          :render-option="renderOption"
         />
         <div v-else class="flex items-center justify-between space-x-2">
           <!--
@@ -678,15 +666,9 @@ const ychat = computed(() => {
           <NAutoComplete v-model:value="prompt" :options="searchOptions" :render-label="renderOption">
             <template #default="{ handleInput, handleBlur, handleFocus }">
               <NInput
-                ref="inputRef"
-                v-model:value="prompt"
-                type="textarea"
-                :placeholder="placeholder"
-                :autosize="{ minRows: 1, maxRows: isMobile ? 4 : 8 }"
-                @input="handleInput"
-                @focus="handleFocus"
-                @blur="handleBlur"
-                @keypress="handleEnter"
+                ref="inputRef" v-model:value="prompt" type="textarea" :placeholder="placeholder"
+                :autosize="{ minRows: 1, maxRows: isMobile ? 4 : 8 }" @input="handleInput" @focus="handleFocus"
+                @blur="handleBlur" @keypress="handleEnter"
               />
             </template>
           </NAutoComplete>
