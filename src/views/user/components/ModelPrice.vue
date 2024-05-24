@@ -2,7 +2,7 @@
 import { NAlert, NDataTable } from 'naive-ui'
 
 const modelPricing = [
-  { model: 'gpt-3.5-turbo-0125', price: '免费' },
+  { model: 'gpt-3.5-turbo-0125', price: '2积分/次' },
   { model: 'gpt-4-0125-preview', price: '10积分/次' },
   { model: 'gpt-4-vision-preview', price: '30积分/次' },
   { model: 'gpt-4-all', price: '40积分/次' },

@@ -595,9 +595,6 @@ const ychat = computed(() => {
   <div class="flex flex-col w-full h-full">
     <!-- v-if="isMobile" -->
     <HeaderComponent :using-context="usingContext" @export="handleExport" @handle-clear="handleClear" />
-    <NAlert type="warning" closable>
-      本站提供免费ChatGPT,但请合理使用,不要滥用。
-    </NAlert>
     <main class="flex-1 overflow-hidden">
       <!-- 提示 -->
       <div id="scrollRef" ref="scrollRef" class="h-full overflow-hidden overflow-y-auto">
