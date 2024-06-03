@@ -2,10 +2,14 @@
 import { NAlert, NDataTable } from 'naive-ui'
 
 const modelPricing = [
-  { model: 'gpt-3.5-turbo-0125', price: '2积分/次' },
-  { model: 'gpt-4-0125-preview', price: '10积分/次' },
+  { model: 'pt-3.5-turbo', price: '2积分/次' },
+  { model: 'gpt-4-turbo-2024-04-09', price: '10积分/次' },
+  { model: 'gpt-4o', price: '10积分/次' },
+  { model: 'claude-3-sonnet-20240229', price: '10积分/次' },
+  { model: 'gemini-pro', price: '10积分/次' },
+  { model: 'kimi', price: '10积分/次' },
+  { model: 'glm-4', price: '10积分/次' },
   { model: 'gpt-4-vision-preview', price: '30积分/次' },
-  { model: 'gpt-4-all', price: '40积分/次' },
   { model: 'midjourney', price: '40积分/次' },
 ]
 
